@@ -3,10 +3,8 @@ import { ref, defineProps } from 'vue'
 import IconChevronLeft from '../Icons/IconChevronLeft.vue'
 import IconChevronRight from '../Icons/IconChevronRight.vue'
 
-const icons = {
-  'left': IconChevronLeft,
-  'right': IconChevronRight
-}
+
+
 
 const props = defineProps({
   images: {
@@ -14,6 +12,12 @@ const props = defineProps({
     required: true,
   },
 })
+
+const icons =  {
+  'left': IconChevronLeft,
+  'right': IconChevronRight
+
+}
 
 const currentIndex = ref(0)
 
@@ -24,6 +28,7 @@ function nextImage() {
 function prevImage() {
   currentIndex.value = (currentIndex.value - 1 + props.images.length) % props.images.length
 }
+
 </script>
 
 <template>

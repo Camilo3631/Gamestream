@@ -25,12 +25,12 @@ const setGameView = (filteredGames) => {
   <LayoutHero />
   <main>
     <SharedLoader v-if="state.isLoading" />
-    <GameLayout v-else :games="state.data" @set-game-view="setGameView">
-      <GameCard v-for="game in gamesView" :key="game.title" :game="game" />
-    </GameLayout>
-    <Teleport to="body">
-      <GameModal />
-    </Teleport>
+     <GameLayout v-else :games="state.data" @set-game-view="setGameView">
+   <GameCard v-for="game in gamesView" :key="game.title" :game="game" />
+  </GameLayout>
+  <Teleport to="body">
+    <GameModal/>
+  </Teleport>
   </main>
 </template>
 
