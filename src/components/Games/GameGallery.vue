@@ -10,6 +10,12 @@ const props = defineProps({
   },
 })
 
+const icons =  {
+  'left': IconChevronLeft,
+  'right': IconChevronRight
+
+}
+
 const currentIndex = ref(0)
 
 function nextImage() {
@@ -19,16 +25,17 @@ function nextImage() {
 function prevImage() {
   currentIndex.value = (currentIndex.value - 1 + props.images.length) % props.images.length
 }
+
 </script>
 
 <template>
   <div class="game-gallery">
     <div class="game-gallery__controls">
       <button class="game-gallery__button game-gallery__button--left" @click="prevImage">
-        <IconChevronLeft />
+         <component :is="icons['left']"></component>
       </button>
       <button class="game-gallery__button game-gallery__button--right" @click="nextImage">
-        <IconChevronRight />
+         <component :is="icons['right']"></component>
       </button>
     </div>
 

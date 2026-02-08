@@ -1,4 +1,7 @@
 <script setup>
+// importamos ref y onMounted de vue
+import { ref, onMounted } from 'vue';
+
 
 defineProps({
   video: {
@@ -6,6 +9,16 @@ defineProps({
     required: true,
   },
 })
+// hacemos refencia el elemento seleccionado
+const videoRef = ref(null)
+
+
+onMounted(() => {
+  // metodo de repdodución automático
+  videoRef.value.play()
+})
+
+
 
 </script>
 
